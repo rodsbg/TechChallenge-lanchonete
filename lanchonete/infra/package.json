@@ -1,8 +1,12 @@
 {
-  "name": "my-app",
+  "name": "lanchonete",
   "version": "1.0.0",
-  "description": "My Node.js Application",
+  "description": "TechChallenge Node.js Application",
   "main": "index.js",
+  "repository": {
+      "type": "git",
+      "url": ""
+  },
   "scripts": {
     "start": "node index.js"
   },
