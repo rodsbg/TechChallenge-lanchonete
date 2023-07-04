@@ -7,7 +7,7 @@
       "type": "git",
       "url": "https://github.com/rodsbg/TechChallenge-lanchonete.git",
       "directory": "lanchonete/app"
-    }
+    },
 "scripts": {
     "start": "node index.js"
   },
