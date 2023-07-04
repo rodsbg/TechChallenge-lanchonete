@@ -5,9 +5,10 @@
   "main": "index.js",
   "repository": {
       "type": "git",
-      "url": "https://github.com/rodsbg/TechChallenge-lanchonete/tree/master/lanchonete/app"
-  },
-  "scripts": {
+      "url": "https://github.com/rodsbg/TechChallenge-lanchonete.git",
+      "directory": "lanchonete/app"
+    }
+"scripts": {
     "start": "node index.js"
   },
   "dependencies": {
