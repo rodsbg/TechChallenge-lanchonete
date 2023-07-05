@@ -4,14 +4,15 @@ const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require("swagger-jsdoc");
 
-const ClienteDTO = require('./application/dtos/ClienteDTO');
 const ClienteService = require('./application/services/ClienteService');
 const ClienteRepository = require('./domain/repositories/ClienteRepository');
 const ClienteController = require('./interfaces/controllers/ClienteController');
 const ClienteRepositoryMongo = require('./infrastructure/mongoose/ClienteRepositoryMongo');
 const CampanhaService = require('./application/services/CampanhaService');
-const ProdutoRoutes = require('./application/routes/ProdutoRoute');
-const clienteRouter = require('./application/routes/ClienteRoute');
+const ProdutoRoute = require('./application/routes/ProdutoRoute');
+const clienteRoute = require('./application/routes/ClienteRoute');
+const campanhaRoute = require('./application/routes/CampanhaRoute');
+
 
 // Swagger configuration options
 const options = {
@@ -49,8 +50,10 @@ app.use(bodyParser.json());
 app.post('/promocao', (req, res) => clienteController.criarPromocao(req, res));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
-app.use('/api', ProdutoRoutes);
-app.use('/api', clienteRouter);
+app.use('/api', ProdutoRoute);
+app.use('/api', clienteRoute);
+app.use('/api', campanhaRoute);
+
 
 
 module.exports = app;

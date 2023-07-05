@@ -10,12 +10,22 @@ const router = express.Router();
  *   post:
  *     summary: Inserir produto e categoria
  *     description: Inserir produto e categoria
- *     parameters:
- *     - in: body
- *       name: nome
- *       type: "string"
- *       required: true
- *       description: Inserir o json com nome e categoria como campos
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - nome
+ *              - categoria
+ *            properties:
+ *              nome:
+ *                type: string
+ *                default: Nome do Produto
+ *              categoria:
+ *                type: array
+ *                default: Categoria do Produto
  *     responses:
  *       200:
  *         description: Produto Cadastrado
@@ -26,6 +36,28 @@ const router = express.Router();
  *   put:
  *     sumario: Alterar o produto pelo id
  *     descricao: Alterar o produto pelo id.
+ *     parameters:
+ *     - in: path
+ *       name: id
+ *       type: string
+ *       required: true
+ *       description: categoria 
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - nome
+ *              - categoria
+ *            properties:
+ *              nome:
+ *                type: string
+ *                default: Nome do Produto
+ *              categoria:
+ *                type: array
+ *                default: Categoria do Produto
  *     responses:
  *       200:
  *         descricao: Alterar o produto pelo id.
@@ -38,6 +70,12 @@ const router = express.Router();
  *   delete:
  *     sumario: Deletar o produto pelo id
  *     descricao: Deletar o produto pelo id.
+ *     parameters:
+ *     - in: path
+ *       name: id
+ *       type: string
+ *       required: true
+ *       description: categoria 
  *     responses:
  *       200:
  *         descricao: Deletar o produto pelo id.
