@@ -5,13 +5,13 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require("swagger-jsdoc");
 
 const ClienteService = require('./application/services/ClienteService');
-const ClienteRepository = require('./domain/repositories/ClienteRepository');
+const ClienteRepository = require('./interfaces/repositories/ClienteRepository');
 const ClienteController = require('./interfaces/controllers/ClienteController');
-const ClienteRepositoryMongo = require('./infrastructure/mongoose/ClienteRepositoryMongo');
 const CampanhaService = require('./application/services/CampanhaService');
 const ProdutoRoute = require('./application/routes/ProdutoRoute');
 const clienteRoute = require('./application/routes/ClienteRoute');
 const campanhaRoute = require('./application/routes/CampanhaRoute');
+const pedidoRoute = require('./application/routes/PedidoRoute');
 
 
 // Swagger configuration options
@@ -53,6 +53,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use('/api', ProdutoRoute);
 app.use('/api', clienteRoute);
 app.use('/api', campanhaRoute);
+app.use('/api', pedidoRoute);
 
 
 

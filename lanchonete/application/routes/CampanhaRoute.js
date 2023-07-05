@@ -1,5 +1,6 @@
 const express = require('express');
-const campanhaService = require('../../application/services/ClienteService');
+const campanhaService = require('../../application/services/CampanhaService');
+const campanhaController = require('../../interfaces/controllers/CampanhaController');
 const router = express.Router();
 
 
@@ -10,12 +11,6 @@ const router = express.Router();
  *   put:
  *     summary: Incluir campanha ao cpf indicado
  *     description: Incluir campanha ao cpf indicado
- *     parameters:
- *     - in: path
- *       name: cpf
- *       type: integer
- *       required: true
- *       description: CPF
  *     requestBody:
  *      required: true
  *      content:
@@ -23,8 +18,12 @@ const router = express.Router();
  *           schema:
  *            type: object
  *            required:
+ *              - cpf
  *              - campanha
  *            properties:
+ *              cpf:
+ *                type: string
+ *                default: CPF do cliente
  *              campanha:
  *                type: string
  *                default: Campanha para o cliente
@@ -36,7 +35,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/campanhas:
+ * /api/campanha:
  *   get:
  *     summary: lista todas as campanhas
  *     description: lista todas as campanhas
@@ -44,20 +43,14 @@ const router = express.Router();
  *       200:
  *         description: Listagem ok
 */ 
-router.put('/campanha/:cpf', async (req, res) => {
-  try {
-    const { cpf } = req.params;
-    const cliente = await campanhaService.buscarClientePorCpf(cpf);
-    res.json(cliente);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao consultar cpf.' });
-  }
-});
+
+
+router.put('/campanha/:cpf', campanhaController.criarCampanha);
 
 router.get('/campanha', async (req, res) => {
     try {
       const campanha = await campanhaService.listarCampanhas();
-      console.log()
+      
       res.json(campanha);
     } catch (error) {
       res.status(500).json({ error: 'Erro ao listar campanhas.' });

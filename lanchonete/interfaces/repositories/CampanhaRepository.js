@@ -2,14 +2,15 @@ const Campanha = require('../../domain/models/Campanha');
 
 const criarCampanha = async (CampanhaData) => {
   try {
-    const campanha = new Produto(CampanhaData);
+    const campanha = new Campanha(CampanhaData);
     await campanha.save();
     return campanha;
   } catch (error) {
-    throw new Error('Erro ao criar o produto.');
+    throw new Error('Erro ao criar campanha.');
   }
 };
 
-module.exports = {
-    criarCampanha,
-  };
+async function listarCampanhas() {
+    return Campanha.find();
+  }
+module.exports = { criarCampanha, listarCampanhas };
