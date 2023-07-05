@@ -2,7 +2,7 @@ const Campanha = require('../../domain/models/Pedido');
 
 const criarPedido = async (PedidoData) => {
   try {
-    const pedido = new Campanha(PedidoData);
+    const pedido = new Pedido(PedidoData);
     await pedido.save();
     return pedido;
   } catch (error) {

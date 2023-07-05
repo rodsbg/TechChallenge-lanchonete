@@ -2,8 +2,6 @@ const express = require('express');
 const pedidoController = require('../../interfaces/controllers/PedidoController');
 const router = express.Router();
 
-
-
 /**
  * @openapi
  * /api/pedido:
@@ -24,30 +22,30 @@ const router = express.Router();
  *              - status
  *              - ondecomer
  *            properties:
- *            cpf:
+ *              cpf:
  *                type: string
  *                default: CPF do cliente
- *            lanche:
+ *              lanche:
+ *                type: array
+ *                default: Incluir Lache
+ *              acompanhamento:
  *                type: string
- *                default: Cadastrar Lanche
- *             acompanhamento:
+ *                default: Cadastrar Acompanhamento
+ *              bebida:
  *                type: string
- *                default: Cadastrar Lanche
- *             bebida:
+ *                default: Cadastrar Bebida
+ *              status:
  *                type: string
- *                default: Cadastrar Lanche
- *             status:
+ *                default: Status
+ *              ondecomer:
  *                type: string
- *                default: Cadastrar Lanche
- *             ondecomer:
- *                type: string
- *                default: Cadastrar Lanche
+ *                default: Cadastrar se pra viagem ou para comer na lanchonete
  *     responses:
  *       200:
- *         description: Cliente ativo
+ *         description: Produto Cadastrado
 */ 
 
 
-router.post('/pedido', pedidoController.criarCampanha);
+router.post('/pedido', pedidoController.criarPedido);
 
 module.exports = router;

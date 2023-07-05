@@ -1,15 +1,15 @@
-const campanhaService = require('../../application/services/CampanhaService');
+const pedidoService = require('../../application/services/PedidoService');
 
-const criarCampanha = async (req, res) => {
+const criarPedido = async (req, res) => {
   try {
-    const campanha = await campanhaService.cadastrarCampanha(req.body);
-    res.status(201).json(campanha);
+    const pedido = await pedidoService.criarPedido(req.body);
+    res.status(201).json(pedido);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
 module.exports = {
-    criarCampanha
+    criarPedido
   };
   
