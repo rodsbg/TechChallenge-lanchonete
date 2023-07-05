@@ -8,6 +8,7 @@ const ClienteRepository = require('./domain/repositories/ClienteRepository');
 const ClienteController = require('./interfaces/controllers/ClienteController');
 const ClienteRepositoryMongo = require('./infrastructure/mongoose/ClienteRepositoryMongo');
 const CampanhaService = require('./application/services/CampanhaService');
+const ProdutoRoutes = require('./application/routes/ProdutoRoutes');
 
 // Configurar a conexão com o MongoDB
 mongoose.connect('mongodb://localhost:27017/techchallengelanchonete', {
@@ -39,5 +40,7 @@ const campanhaService = new CampanhaService(clienteRepository);
 app.post('/clientes', (req, res) => clienteController.cadastrarCliente(req, res));
 app.get('/clientes/:cpf', (req, res) => clienteController.obterClientePorCpf(req, res));
 app.post('/promocao', (req, res) => clienteController.criarPromocao(req, res));
+
+app.use('/', ProdutoRoutes);
 
 module.exports = app;

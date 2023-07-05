@@ -5,7 +5,7 @@ class CampanhaService {
       this.clienteRepository = clienteRepository;
     }
   
-    async criarPromocao(cpf, promotionDetails) {
+    async criarPromocao(cpf, mensagem) {
       const clienteExistente = await this.clienteRepository.findByCpf(cpf);
       if (!clienteExistente) {
         throw new Error('Cliente não cadastrado.');
@@ -14,7 +14,7 @@ class CampanhaService {
       // Lógica para criar a campanha promocional para o cliente
       const campanha = {
         cpf: this.clienteRepository.cpf,
-        mensagem: promotionDetails,
+        mensagem: this.clienteRepository.mensagem,
         criadoem: new Date(),
       };
   
