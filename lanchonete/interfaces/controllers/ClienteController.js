@@ -1,4 +1,5 @@
-class ClienteController {
+const clienteService = require('../../application/services/ClienteService');
+class clienteController {
     constructor(clienteService,campanhaService) {
       this.clienteService = clienteService;
       this.campanhaService = campanhaService;
@@ -14,13 +15,27 @@ class ClienteController {
         res.status(400).json({ error: error.message });
       }
     }
-    async obterClientePorCpf(req, res) {
+    async buscarClientePorCpf(req, res) {
+        const { cpf } = req.params;
         try {
-          const cpf = req.params.cpf;
-          const cliente = await this.clienteService.obterClientePorCpf(cpf);
-    
+          
+          const cliente = await this.clienteService.buscarClientePorCpf(cpf);
+          
           if (!cliente) {
             res.status(404).json({ error: 'Cliente não encontrado' });
+          } else {
+            res.status(200).json(cliente);
+          }
+        } catch (error) {
+          res.status(500).json({ error: error.message });
+        }
+      }
+      async listarClientes() {
+        try {
+          const cliente = await this.clienteService.listarClientes();
+    
+          if (!cliente) {
+            res.status(404).json({ error: 'Nenhum Cliente cadastrado' });
           } else {
             res.status(200).json(cliente);
           }
@@ -40,7 +55,7 @@ class ClienteController {
       }
   }
   
-  module.exports = ClienteController;
+  module.exports = clienteController;
   
  
   

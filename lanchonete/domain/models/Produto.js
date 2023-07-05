@@ -10,7 +10,7 @@ const ProdutoSchema = new mongoose.Schema({
     type: String,
     enum: ['lanche', 'acompanhamento', 'bebida', 'sobremesa'],
     required: true,
-  },
+  }
 });
 
 module.exports = mongoose.model('Produto', ProdutoSchema);

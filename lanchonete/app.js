@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require("swagger-jsdoc");
 
 const ClienteDTO = require('./application/dtos/ClienteDTO');
 const ClienteService = require('./application/services/ClienteService');
@@ -8,7 +10,24 @@ const ClienteRepository = require('./domain/repositories/ClienteRepository');
 const ClienteController = require('./interfaces/controllers/ClienteController');
 const ClienteRepositoryMongo = require('./infrastructure/mongoose/ClienteRepositoryMongo');
 const CampanhaService = require('./application/services/CampanhaService');
-const ProdutoRoutes = require('./application/routes/ProdutoRoutes');
+const ProdutoRoutes = require('./application/routes/ProdutoRoute');
+const clienteRouter = require('./application/routes/ClienteRoute');
+
+// Swagger configuration options
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Sample API",
+      version: "1.0.0",
+      description: "A sample API using Swagger and Express",
+    },
+  },
+  apis: ["./application/routes/*.js"], // Path to the API routes
+};
+
+const specs = swaggerJsdoc(options);
+
 
 // Configurar a conexão com o MongoDB
 mongoose.connect('mongodb://localhost:27017/techchallengelanchonete', {
@@ -20,27 +39,18 @@ mongoose.connect('mongodb://localhost:27017/techchallengelanchonete', {
   console.error('Erro ao conectar ao MongoDB:', error);
 });
 
-const clienteModel = mongoose.model('Cliente', {
-  nome: String,
-  email: String,
-  cpf: String,
-});
-
 // Configuração do Express
 const app = express();
 app.use(bodyParser.json());
 
-// Configuração dos componentes da arquitetura hexagonal
-const clienteRepository = new ClienteRepositoryMongo(clienteModel);
-const clienteService = new ClienteService(clienteRepository);
-const clienteController = new ClienteController(clienteService);
-const campanhaService = new CampanhaService(clienteRepository);
 
 // Rota para cadastrar um cliente
-app.post('/clientes', (req, res) => clienteController.cadastrarCliente(req, res));
-app.get('/clientes/:cpf', (req, res) => clienteController.obterClientePorCpf(req, res));
+
 app.post('/promocao', (req, res) => clienteController.criarPromocao(req, res));
 
-app.use('/', ProdutoRoutes);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api', ProdutoRoutes);
+app.use('/api', clienteRouter);
+
 
 module.exports = app;

@@ -1,11 +1,16 @@
-class ClienteRepository {
-  async findByCpf(cpf) {
-    throw new Error('Método não implementado');
-  }
+const Cliente = require('../../domain/models/Cliente');
 
-  async create(clienteDTO) {
-    throw new Error('Método não implementado');
-  }
+async function cadastrarCliente(clienteData) {
+  const cliente = new Cliente(clienteData);
+  await cliente.save();
+  return cliente;
 }
 
-module.exports = ClienteRepository;
+async function buscarClientePorCpf(cpf) {
+  return Cliente.findOne({ cpf });
+}
+
+async function listarClientes() {
+  return Cliente.find();
+}
+module.exports = { cadastrarCliente, buscarClientePorCpf, listarClientes };

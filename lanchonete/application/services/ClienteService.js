@@ -1,33 +1,27 @@
-const { exit } = require('process');
-const ClienteDTO = require('../dtos/ClienteDTO');
+const clienteRepository = require('../../interfaces/repositories/ClienteRepository');
 
-class ClienteService {
-  constructor(clienteRepository) {
-    this.clienteRepository = clienteRepository;
+async function cadastrarCliente(clienteData) {
+  const clienteExistente = await clienteRepository.buscarClientePorCpf(clienteData.cpf);
+  if (clienteExistente) {
+    throw new Error('CPF já cadastrado.');
   }
 
-  async cadastrarCliente(nome, email, cpf) {
-    // Verificar se o CPF já está cadastrado
-    const clienteExistente = await this.clienteRepository.findByCpf(cpf);
-    if (clienteExistente) {
-      throw new Error('CPF já cadastrado');
-    }
-
-    const clienteDTO = new ClienteDTO(nome, email, cpf);
-    const cliente = await this.clienteRepository.create(clienteDTO);
-
-    return cliente;
-  }
-  async obterClientePorCpf(cpf) {
-    const clienteExistente = await this.clienteRepository.findByCpf(cpf);
-    if (!clienteExistente) {
-      throw new Error('CPF não cadastrado');
-      exit;
-    }
-      return clienteExistente;
-
-  
-  }
+  const cliente = await clienteRepository.cadastrarCliente(clienteData);
+  return cliente;
 }
 
-module.exports = ClienteService;
+async function buscarClientePorCpf(clienteData) {
+  const clienteExistente = await clienteRepository.buscarClientePorCpf(clienteData);
+  
+  if (!clienteExistente) {
+    throw new Error('CPF não cadastrado.');
+  }
+
+  return clienteExistente
+}
+
+async function listarClientes() {
+  return clienteRepository.listarClientes();
+}
+
+module.exports = { cadastrarCliente, buscarClientePorCpf, listarClientes};
