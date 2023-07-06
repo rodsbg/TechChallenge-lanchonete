@@ -7,6 +7,7 @@ O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
 - node.js
 - Swagger
 - express
+- mongodb
 
 ## Pré-requisitos
 
@@ -18,4 +19,8 @@ O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
 
 1. Clone o repositório
    ```sh
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/rodsbg/TechChallenge-lanchonete.git
+
+2. Navegar até a pasta onde o projeto foi salvo
+3. Entrar na pasta
+4. docker-compose up -d --build
