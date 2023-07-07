@@ -4,7 +4,11 @@ const criarPedido = async (req, res) => {
   try {
     //Não é necessário validar cpf para cadastrar o pedido
     //verificando se existe o lanche, acompanhamento e a bebida
+    
+
+
     const pedido = await pedidoService.cadastrarPedido(req.body);
+
     //inicia o fake checkout
        
     res.status(201).json(pedido);

@@ -84,7 +84,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/produtos:
+ * /api/produtos/{codigo}:
  *   delete:
  *     summary: Deletar o produto pelo codigo
  *     description: Deletar o produto pelo codigo
@@ -120,7 +120,7 @@ const router = express.Router();
 
 router.post('/produtos', ProdutoController.criarProduto);
 router.put('/produtos', ProdutoController.editarProduto);
-router.delete('/produtos', ProdutoController.removerProduto);
+router.delete('/produtos/:codigo', ProdutoController.removerProduto);
 router.get('/produtos/categoria/:categoria', ProdutoController.buscarProdutosPorCategoria);
 
 module.exports = router;

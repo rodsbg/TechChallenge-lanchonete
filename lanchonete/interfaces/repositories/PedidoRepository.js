@@ -5,11 +5,7 @@ const criarPedido = async (PedidoData) => {
   try {
     const pedido = new Pedido(PedidoData);
     await pedido.save();
-    const fakeCheckout = new Pagamento(PedidoData)
-    await fakeCheckout.save();
-    //altera o status do pedido apos o pagamento para Recebido
-    const StatusPedido = this.editarStatusPedido(PedidoData.cpf, PedidoData)
-    await StatusPedido.save();
+
     return pedido;
   } catch (error) {
     throw new Error('Erro ao criar pedido.');

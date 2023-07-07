@@ -14,9 +14,8 @@ const criarProduto = async (req, res) => {
 
 const editarProduto = async (req, res) => {
   try {
-    const { codigo } = req.body;
     // console.log(codigo, "   " ,req.body, "Controller")
-    const produto = await produtoService.editarProduto(codigo, req.body);
+    const produto = await produtoService.editarProduto(req.body);
     res.json(produto);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -25,7 +24,9 @@ const editarProduto = async (req, res) => {
 
 const removerProduto = async (req, res) => {
   try {
-    const { codigo } = req.params;
+    const  cod  = req.params;
+    const codigo = JSON.stringify(cod);
+  //  console.log(codigo, "   ", "Controller")
     await produtoService.removerProduto(codigo);
     res.sendStatus(204);
   } catch (error) {

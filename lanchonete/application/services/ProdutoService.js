@@ -11,10 +11,11 @@ const criarProduto = async (produtoData) => {
   }
 };
 
-const editarProduto = async (produtoId, produtoData) => {
+const editarProduto = async (produtoData) => {
   try {
-  //  console.log(produtoId, "   " ,produtoData, "Service")
-    return await produtoRepository.editarProduto(produtoId, produtoData);
+    
+    //console.log(codigo, "Service")
+    return await produtoRepository.editarProduto(produtoData);
   } catch (error) {
     throw new Error('Erro ao editar o produto.');
   }
@@ -22,6 +23,7 @@ const editarProduto = async (produtoId, produtoData) => {
 
 const removerProduto = async (produtoId) => {
   try {
+//    console.log(produtoId, "   ", "service");
     await produtoRepository.removerProduto(produtoId);
   } catch (error) {
     throw new Error('Erro ao remover o produto.');

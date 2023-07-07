@@ -14,8 +14,11 @@ const criarProduto = async (produtoData) => {
 
 const editarProduto = async (produtoData) => {
   try {
-  console.log(productData.codigo, "   " ,produtoData, "Repo");
-    const produto = await Produto.findOneAndUpdate(productData.codigo, produtoData);
+
+  codigo = {codigo : produtoData.codigo}
+  //console.log(codigo, "   " ,produtoData, "Repo");
+
+    const produto = await Produto.findOneAndUpdate(codigo, produtoData);
 
     return produto;
   } catch (error) {
@@ -25,9 +28,9 @@ const editarProduto = async (produtoData) => {
 
 const removerProduto = async (produtoId) => {
   try {
-    await Produto.findByIdAndRemove(produtoId);
+    await Produto.findOneAndDelete(produtoId);
   } catch (error) {
-    throw new Error('Erro ao remover o produto.');
+    throw new Error('Produto nao cadastrado.');
   }
 };
 
