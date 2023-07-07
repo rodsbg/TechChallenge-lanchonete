@@ -27,7 +27,7 @@ const router = express.Router();
  *                default: Nome do Produto
  *              categoria:
  *                type: string
- *                default: Categoria do Produto
+ *                default: Categoria do Produto (lanche acompanhamento bebida sobremesa)
  *              descricao:
  *                type: string
  *                default: Descritivo do produto
@@ -100,7 +100,7 @@ const router = express.Router();
  *       name: categoria
  *       type: string
  *       required: true
- *       description: categoria 
+ *       description: lanche acompanhamento bebida sobremesa
  *     responses:
  *       200:
  *         description: Lista produtos pela categoria
