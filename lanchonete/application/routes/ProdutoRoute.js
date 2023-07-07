@@ -53,7 +53,7 @@ const router = express.Router();
  *       name: codigo
  *       type: string
  *       required: true
- *       description: categoria 
+ *       description: codigo do produto
  *     requestBody:
  *      required: true
  *      content:
