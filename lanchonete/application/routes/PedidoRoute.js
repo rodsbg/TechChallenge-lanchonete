@@ -36,7 +36,7 @@ const router = express.Router();
  *                default: Incluir Bebida
  *              status:
  *                type: string
- *                default: Status do pedido
+ *                default: Status do pedido - Enviado para pagamento
  *              ondecomer:
  *                type: string
  *                default: Viagem ou comer na lanchonete
