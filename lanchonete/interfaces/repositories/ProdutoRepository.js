@@ -14,7 +14,8 @@ const criarProduto = async (produtoData) => {
 
 const editarProduto = async (produtoId, produtoData) => {
   try {
-    const produto = await Produto.findByIdAndUpdate(produtoId, produtoData, {
+    const produto = await Produto.findOneAndUpdate(produtoId, produtoData, 
+      {
       new: true,
     });
     return produto;

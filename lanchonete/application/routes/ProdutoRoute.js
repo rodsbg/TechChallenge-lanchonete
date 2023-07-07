@@ -49,11 +49,6 @@ const router = express.Router();
  *     summary: Alterar o produto pelo codigo
  *     description: Alterar o produto pelo codigo.
  *     parameters:
- *     - in: path
- *       name: codigo
- *       type: string
- *       required: true
- *       description: codigo do produto
  *     requestBody:
  *      required: true
  *      content:
@@ -61,11 +56,15 @@ const router = express.Router();
  *           schema:
  *            type: object
  *            required:
+ *              - codigo
  *              - nome
  *              - categoria
  *              - descricao
  *              - preco
  *            properties:
+ *              codigo:
+ *                type: number
+ *                default: codigo do Produto
  *              nome:
  *                type: string
  *                default: Nome do Produto
