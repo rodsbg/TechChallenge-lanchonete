@@ -12,6 +12,7 @@ const ProdutoRoute = require('./application/routes/ProdutoRoute');
 const clienteRoute = require('./application/routes/ClienteRoute');
 const campanhaRoute = require('./application/routes/CampanhaRoute');
 const pedidoRoute = require('./application/routes/PedidoRoute');
+const pagamentoRoute = require('./application/routes/FakecheckoutRoute');
 
 
 // Swagger configuration options
@@ -52,6 +53,7 @@ app.use('/api', ProdutoRoute);
 app.use('/api', clienteRoute);
 app.use('/api', campanhaRoute);
 app.use('/api', pedidoRoute);
+app.use('/api', pagamentoRoute);
 
 
 
