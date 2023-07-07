@@ -3,12 +3,12 @@ const pagamentoService = require('../../application/services/PagamentoService');
 const listarPagamentos = async(req,res) => {
   try {
     
-    const pedido = await pedidoService.listarPagamentos();
+    const pagamento = await pedidoService.listarPagamentos();
 
-    if (!pedido) {
+    if (!pagamento) {
       res.status(404).json({ error: 'Nenhum Pagamento realizado' });
     } else {
-      res.status(200).json(pedido);
+      res.status(200).json(pagamento);
     }
   } catch (error) {
     res.status(500).json({ error: error.message });

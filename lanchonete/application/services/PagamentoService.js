@@ -1,13 +1,8 @@
-const pedidoRepository = require('../../interfaces/repositories/PedidoRepository');
+const pedidoRepository = require('../../interfaces/repositories/PagamentoRepository');
 
-async function cadastrarPedido(pedidoData) {
+async function listarPagamentos() {
   
-  const pedido = await pedidoRepository.criarPedido(pedidoData);
-  return pedido;
-}
-async function listarPedidos() {
-  
-  return pedidoRepository.listarPedidos();
+  return pedidoRepository.listarPagamentos();
 }
 
-module.exports = { cadastrarPedido, listarPedidos  }
+module.exports = { listarPagamentos  }
