@@ -27,7 +27,20 @@ const listarPedidos = async(req,res) => {
     res.status(500).json({ error: error.message });
   }
 }
+const buscarpedidosporcpfPedidos = async (req, res) => {
+  try {
+    const { cpf } = req.params;
+    const pedidos = await produtoService.buscarpedidosporcpfPedidos(categoria);
+    res.json(pedidos);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
+
 module.exports = {
-    criarPedido, listarPedidos
+    criarPedido, listarPedidos, buscarpedidosporcpfPedidos
   };
   

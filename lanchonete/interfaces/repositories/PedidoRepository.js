@@ -16,4 +16,14 @@ const criarPedido = async (PedidoData) => {
 async function listarPedidos() {
     return Pedido.find();
   }
-module.exports = { criarPedido, listarPedidos };
+
+const buscarpedidosporcpfPedidos = async (cpf) => {
+  try {
+    const pedidos = await Pedido.find({ cpf });
+    return pedidos;
+  } catch (error) {
+    throw new Error('Erro buscar pedido pelo cpf.');
+  }
+};
+
+module.exports = { criarPedido, listarPedidos, buscarpedidosporcpfPedidos };

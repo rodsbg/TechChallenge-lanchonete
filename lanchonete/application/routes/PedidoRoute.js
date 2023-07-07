@@ -47,6 +47,24 @@ const router = express.Router();
 
 /**
  * @openapi
+ * /api/pedidos/{cpf}:
+ *   get:
+ *     sumario: Acompanhamento do pedido por cpf
+ *     descricao: Acompanhamento status do pedido por cpf
+ *     parameters:
+ *     - in: path
+ *       name: cpf
+ *       type: string
+ *       required: true
+ *       description: categoria 
+ *     responses:
+ *       200:
+ *         descricao: Consulta status do pedido por cpf
+ */
+
+
+/**
+ * @openapi
  * /api/pedido:
  *   get:
  *     summary: lista todos os pedidos
@@ -57,5 +75,6 @@ const router = express.Router();
 */ 
 router.post('/pedido', pedidoController.criarPedido);
 router.get('/pedido', pedidoController.listarPedidos);
+router.get('/pedido/:cpf', pedidoController.buscarpedidosporcpfPedidos);
 
 module.exports = router;

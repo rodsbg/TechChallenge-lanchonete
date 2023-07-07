@@ -10,4 +10,13 @@ async function listarPedidos() {
   return pedidoRepository.listarPedidos();
 }
 
-module.exports = { cadastrarPedido, listarPedidos  }
+
+const buscarpedidosporcpfPedidos = async (cpf) => {
+  try {
+    return await produtoRepository.buscarpedidosporcpfPedidos(cpf);
+  } catch (error) {
+    throw new Error('Nenhum pedido cadastrado para o cliente');
+  }
+};
+
+module.exports = { cadastrarPedido, listarPedidos, buscarpedidosporcpfPedidos }

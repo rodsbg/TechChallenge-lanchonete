@@ -22,6 +22,7 @@ const pedidosSchema = new mongoose.Schema({
   },
   status: {
     type: String,
+    enum: ['Recebido', 'Em preparacao', 'Pronto', 'Finalizado'],
     required: true,
   },
   ondecomer: {
