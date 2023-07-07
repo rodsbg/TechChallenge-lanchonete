@@ -24,7 +24,7 @@ const router = express.Router();
  *              - preco
  *            properties:
  *              codigo:
- *                type: string
+ *                type: number
  *                default: codigo do produto
  *              nome:
  *                type: string
@@ -36,7 +36,7 @@ const router = express.Router();
  *                type: string
  *                default: Descritivo do produto
  *              preco:
- *                type: string
+ *                type: number
  *                default: Preco do produto
  *     responses:
  *       200:
@@ -46,8 +46,8 @@ const router = express.Router();
  * @openapi
  * /api/produtos/{codigo}:
  *   put:
- *     sumario: Alterar o produto pelo id
- *     descricao: Alterar o produto pelo id.
+ *     summary: Alterar o produto pelo codigo
+ *     description: Alterar o produto pelo codigo.
  *     parameters:
  *     - in: path
  *       name: codigo
@@ -72,7 +72,7 @@ const router = express.Router();
  *                default: Categoria do Produto
  *     responses:
  *       200:
- *         description: Alterar o produto pelo id.
+ *         description: Alterar o produto pelo codigo
  *     
  */
 
@@ -80,8 +80,8 @@ const router = express.Router();
  * @openapi
  * /api/produtos/{codigo}:
  *   delete:
- *     sumario: Deletar o produto pelo id
- *     descricao: Deletar o produto pelo id.
+ *     summary: Deletar o produto pelo codigo
+ *     description: Deletar o produto pelo codigo
  *     parameters:
  *     - in: path
  *       name: codigo
@@ -90,7 +90,7 @@ const router = express.Router();
  *       description: categoria 
  *     responses:
  *       200:
- *         description: Deletar o produto pelo id.
+ *         description: Deletar o produto pelo codigo
  */
 
 /**

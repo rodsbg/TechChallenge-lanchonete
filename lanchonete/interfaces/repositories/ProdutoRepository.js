@@ -3,7 +3,9 @@ const Produto = require('../../domain/models/Produto');
 
 const criarProduto = async (produtoData) => {
   try {
+    //console.log(produtoData, "repository");
     const produto = new Produto(produtoData);
+    console.log(produto,"repo");
     await produto.save();
     return produto;
   } catch (error) {
@@ -55,4 +57,5 @@ module.exports = {
   editarProduto,
   removerProduto,
   buscarProdutosPorCategoria,
+  buscarprodutoporcodigo,
 };

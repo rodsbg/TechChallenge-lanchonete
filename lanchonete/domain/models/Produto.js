@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const ProdutoSchema = new mongoose.Schema({
   codigo: {
-    type: String,
+    type: Number,
     required: true,
   },
   nome: {
@@ -20,7 +20,7 @@ const ProdutoSchema = new mongoose.Schema({
     required: true,
   },
   preco:{
-    type: String,
+    type: Number,
     required: true,
   },
 });
