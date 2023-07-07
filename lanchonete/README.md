@@ -23,4 +23,5 @@ O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
 
 2. Navegar até a pasta onde o projeto foi salvo
 3. Entrar na pasta
-4. docker-compose up -d --build
+4. npm install express mongoose body-parser swagger-ui-express swagger-jsdoc
+5. docker-compose up -d --build
