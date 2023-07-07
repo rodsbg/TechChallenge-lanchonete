@@ -69,13 +69,13 @@ const router = express.Router();
  *                type: string
  *                default: Nome do Produto
  *              categoria:
- *                type: array
+ *                type: number
  *                default: Categoria do Produto
  *              descricao:
  *                type: string
  *                default: Descricao do Produto
  *              preco:
- *                type: array
+ *                type: number
  *                default: Preco do Produto
  *     responses:
  *       200:

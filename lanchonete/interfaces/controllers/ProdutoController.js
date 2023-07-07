@@ -15,7 +15,7 @@ const criarProduto = async (req, res) => {
 const editarProduto = async (req, res) => {
   try {
     const { codigo } = req.body;
-    console.log(codigo);
+    console.log(req.body);
     const produto = await produtoService.editarProduto(codigo, req.body);
     res.json(produto);
   } catch (error) {
