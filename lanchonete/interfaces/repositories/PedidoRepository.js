@@ -1,4 +1,5 @@
 const Pedido = require('../../domain/models/Pedido');
+const Pagamento = require('../../domain/models/Pagamento');
 
 const criarPedido = async (PedidoData) => {
   try {

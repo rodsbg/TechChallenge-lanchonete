@@ -1,4 +1,4 @@
-const pedidoRepository = require('../../interfaces/repositories/PagamentoRepository');
+const pedidoRepository = require('../../interfaces/repositories/PagamentosRepository');
 
 async function listarPagamentos() {
   

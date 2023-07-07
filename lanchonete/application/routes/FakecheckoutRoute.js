@@ -4,7 +4,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/pedido:
+ * /api/consultapagamentos:
  *   get:
  *     summary: Consulta Pagamento (FakeCheckout)
  *     description: Consulta Pagamento (FakeCheckout)
