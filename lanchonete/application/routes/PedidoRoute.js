@@ -49,17 +49,19 @@ const router = express.Router();
  * @openapi
  * /api/pedidos/{cpf}:
  *   get:
- *     sumario: Acompanhamento do pedido por cpf
- *     descricao: Acompanhamento status do pedido por cpf
+ *     summary: Acompanhamento do pedido por cpf
+ *     description: Acompanhamento status do pedido por cpf
  *     parameters:
  *     - in: path
  *       name: cpf
  *       type: string
  *       required: true
- *       description: categoria 
+ *       description: cpf do cliente para consultar pedido
  *     responses:
  *       200:
- *         descricao: Consulta status do pedido por cpf
+ *         description: Consulta status do pedido por cpf
+ *       404:
+ *         description: Não há pedidos para esse cpf
  */
 
 

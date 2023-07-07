@@ -28,7 +28,7 @@ const router = express.Router();
  *              categoria:
  *                type: string
  *                default: Categoria do Produto
- *              descicao:
+ *              descricao:
  *                type: string
  *                default: Descritivo do produto
  *              preco:
@@ -68,7 +68,7 @@ const router = express.Router();
  *                default: Categoria do Produto
  *     responses:
  *       200:
- *         descricao: Alterar o produto pelo id.
+ *         description: Alterar o produto pelo id.
  *     
  */
 
@@ -86,15 +86,15 @@ const router = express.Router();
  *       description: categoria 
  *     responses:
  *       200:
- *         descricao: Deletar o produto pelo id.
+ *         description: Deletar o produto pelo id.
  */
 
 /**
  * @openapi
  * /api/produtos/categoria/{categoria}:
  *   get:
- *     sumario: Lista produtos pela categoria
- *     descricao: Necessario inserir a categorias
+ *     summary: Lista produtos pela categoria
+ *     description: Necessario inserir a categorias
  *     parameters:
  *     - in: path
  *       name: categoria
@@ -103,7 +103,7 @@ const router = express.Router();
  *       description: categoria 
  *     responses:
  *       200:
- *         descricao: Lista produtos pela categoria
+ *         description: Lista produtos pela categoria
  */
 
 

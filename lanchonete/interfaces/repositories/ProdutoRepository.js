@@ -7,7 +7,7 @@ const criarProduto = async (produtoData) => {
     await produto.save();
     return produto;
   } catch (error) {
-    throw new Error('Erro ao criar o produto.');
+    throw new Error('Erro ao cadastrar produto.');
   }
 };
 

@@ -3,9 +3,11 @@ const produtoRepository = require('../../interfaces/repositories/ProdutoReposito
 
 const criarProduto = async (produtoData) => {
   try {
+
     return await produtoRepository.criarProduto(produtoData);
+
   } catch (error) {
-    throw new Error('Erro ao criar o produto.');
+    throw new Error('Erro ao cadastrar o produto.');
   }
 };
 
