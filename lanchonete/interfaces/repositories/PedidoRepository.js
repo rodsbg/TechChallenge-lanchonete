@@ -1,4 +1,4 @@
-const Campanha = require('../../domain/models/Pedido');
+const Pedido = require('../../domain/models/Pedido');
 
 const criarPedido = async (PedidoData) => {
   try {
@@ -6,11 +6,11 @@ const criarPedido = async (PedidoData) => {
     await pedido.save();
     return pedido;
   } catch (error) {
-    throw new Error('Erro ao criar campanha.');
+    throw new Error('Erro ao criar pedido.');
   }
 };
 
-//async function listarCampanhas() {
-//    return Campanha.find();
-//  }
-module.exports = { criarPedido };
+async function listarPedidos() {
+    return Pedido.find();
+  }
+module.exports = { criarPedido, listarPedidos };

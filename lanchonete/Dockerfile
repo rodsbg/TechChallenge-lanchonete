@@ -11,10 +11,10 @@ COPY package.json ./
 RUN npm install
 
 # Copy application files
-COPY . .
+ADD . .
 
 # Expose the port
 EXPOSE 3000
 
 # Run the application
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]

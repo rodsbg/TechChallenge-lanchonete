@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const pedidosSchema = new mongoose.Schema({
   cpf: {
-    type: String,
+    type: Number,
     required: false,
   },
   lanche: {

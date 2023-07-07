@@ -30,22 +30,32 @@ const router = express.Router();
  *                default: Incluir Lache
  *              acompanhamento:
  *                type: string
- *                default: Cadastrar Acompanhamento
+ *                default: Incluir Acompanhamento
  *              bebida:
  *                type: string
- *                default: Cadastrar Bebida
+ *                default: Incluir Bebida
  *              status:
  *                type: string
- *                default: Status
+ *                default: Status do pedido
  *              ondecomer:
  *                type: string
- *                default: Cadastrar se pra viagem ou para comer na lanchonete
+ *                default: Viagem ou comer na lanchonete
  *     responses:
  *       200:
  *         description: Produto Cadastrado
 */ 
 
-
+/**
+ * @openapi
+ * /api/pedido:
+ *   get:
+ *     summary: lista todos os pedidos
+ *     description: lista todos os pedidos
+ *     responses:
+ *       200:
+ *         description: Listagem ok
+*/ 
 router.post('/pedido', pedidoController.criarPedido);
+router.get('/pedido', pedidoController.listarPedidos);
 
 module.exports = router;

@@ -47,8 +47,6 @@ app.use(bodyParser.json());
 
 // Rota para cadastrar um cliente
 
-app.post('/promocao', (req, res) => clienteController.criarPromocao(req, res));
-
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use('/api', ProdutoRoute);
 app.use('/api', clienteRoute);

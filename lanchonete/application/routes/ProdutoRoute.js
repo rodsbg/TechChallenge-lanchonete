@@ -19,13 +19,21 @@ const router = express.Router();
  *            required:
  *              - nome
  *              - categoria
+ *              - descricao
+ *              - preco
  *            properties:
  *              nome:
  *                type: string
  *                default: Nome do Produto
  *              categoria:
- *                type: array
+ *                type: string
  *                default: Categoria do Produto
+ *              descicao:
+ *                type: string
+ *                default: Descritivo do produto
+ *              preco:
+ *                type: string
+ *                default: Preco do produto
  *     responses:
  *       200:
  *         description: Produto Cadastrado

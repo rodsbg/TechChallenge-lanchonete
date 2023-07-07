@@ -1,19 +1,13 @@
-const clienteRepository = require('../../interfaces/repositories/ClienteRepository');
-const campanhaRepository = require('../../interfaces/repositories/PedidoRepository');
+const pedidoRepository = require('../../interfaces/repositories/PedidoRepository');
 
 async function cadastrarPedido(pedidoData) {
-  const clienteExistente = await clienteRepository.buscarClientePorCpf(pedidoData.cpf);
-  if (!clienteExistente) {
-    throw new Error('CPF não cadastrado');
-  }
+  
   const pedido = await pedidoRepository.criarPedido(pedidoData);
   return pedido;
-  }
-  return;
-
-//async function listarCampanhas() {
+}
+async function listarPedidos() {
   
- // return campanhaRepository.listarCampanhas();
-//}
+  return pedidoRepository.listarPedidos();
+}
 
-module.exports = { cadastrarPedido }
+module.exports = { cadastrarPedido, listarPedidos  }

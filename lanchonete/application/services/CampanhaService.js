@@ -18,3 +18,4 @@ async function listarCampanhas() {
 }
 
 module.exports = { cadastrarCampanha, listarCampanhas }
+
