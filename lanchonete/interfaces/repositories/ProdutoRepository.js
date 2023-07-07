@@ -39,6 +39,17 @@ const buscarProdutosPorCategoria = async (categoria) => {
   }
 };
 
+const buscarprodutoporcodigo = async (codigo) => {
+  try {
+    const produtos = await Produto.find({ codigo });
+    return produtos;
+  } catch (error) {
+    throw new Error('Erro ao buscar produtos por codigo.');
+  }
+};
+
+
+
 module.exports = {
   criarProduto,
   editarProduto,

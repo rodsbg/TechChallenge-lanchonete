@@ -13,8 +13,8 @@ const criarProduto = async (req, res) => {
 
 const editarProduto = async (req, res) => {
   try {
-    const { id } = req.params;
-    const produto = await produtoService.editarProduto(id, req.body);
+    const { codigo} = req.params;
+    const produto = await produtoService.editarProduto(codigo, req.body);
     res.json(produto);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -23,8 +23,8 @@ const editarProduto = async (req, res) => {
 
 const removerProduto = async (req, res) => {
   try {
-    const { id } = req.params;
-    await produtoService.removerProduto(id);
+    const { codigo } = req.params;
+    await produtoService.removerProduto(codigo);
     res.sendStatus(204);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -41,9 +41,22 @@ const buscarProdutosPorCategoria = async (req, res) => {
   }
 };
 
+const buscarprodutoporcodigo = async (req, res) => {
+  try {
+    const { codigo } = req.params;
+    const pedidos = await produtoService.buscarprodutoporcodigo(codigo);
+    res.json(pedidos);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
 module.exports = {
   criarProduto,
   editarProduto,
   removerProduto,
   buscarProdutosPorCategoria,
+  buscarprodutoporcodigo,
 };

@@ -33,7 +33,7 @@ const specs = swaggerJsdoc(options);
 
 
 // Configurar a conexão com o MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/techchallengelanchonete', {
+mongoose.connect('mongodb://lanchonete-mongodb-1:27017/techchallengelanchonete', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {

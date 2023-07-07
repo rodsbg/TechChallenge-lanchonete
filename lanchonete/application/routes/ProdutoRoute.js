@@ -17,11 +17,15 @@ const router = express.Router();
  *           schema:
  *            type: object
  *            required:
+ *              - codigo
  *              - nome
  *              - categoria
  *              - descricao
  *              - preco
  *            properties:
+ *              codigo:
+ *                type: string
+ *                default: codigo do produto
  *              nome:
  *                type: string
  *                default: Nome do Produto
@@ -40,13 +44,13 @@ const router = express.Router();
 */ 
 /**
  * @openapi
- * /api/produtos/{id}:
+ * /api/produtos/{codigo}:
  *   put:
  *     sumario: Alterar o produto pelo id
  *     descricao: Alterar o produto pelo id.
  *     parameters:
  *     - in: path
- *       name: id
+ *       name: codigo
  *       type: string
  *       required: true
  *       description: categoria 
@@ -74,13 +78,13 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/produtos/{id}:
+ * /api/produtos/{codigo}:
  *   delete:
  *     sumario: Deletar o produto pelo id
  *     descricao: Deletar o produto pelo id.
  *     parameters:
  *     - in: path
- *       name: id
+ *       name: codigo
  *       type: string
  *       required: true
  *       description: categoria 

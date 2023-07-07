@@ -35,9 +35,19 @@ const buscarProdutosPorCategoria = async (categoria) => {
   }
 };
 
+const buscarprodutoporcodigo = async (codigo) => {
+  try {
+    return await produtoRepository.buscarprodutoporcodigo(codigo);
+  } catch (error) {
+    throw new Error('Erro ao buscar produtos por codigo.');
+  }
+};
+ 
+
 module.exports = {
   criarProduto,
   editarProduto,
   removerProduto,
   buscarProdutosPorCategoria,
+  buscarprodutoporcodigo,
 };

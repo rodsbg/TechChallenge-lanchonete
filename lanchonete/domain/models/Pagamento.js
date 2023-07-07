@@ -8,7 +8,6 @@ const pedidosSchema = new mongoose.Schema({
   lanche: {
     type: String,
     required: true,
-    
   },
   acompanhamento: {
     type: String,
@@ -31,9 +30,7 @@ const pedidosSchema = new mongoose.Schema({
   preco: {
     type: String,
     required: true,
-  },
-
-
+  }
 });
 
 module.exports = mongoose.model('Pagamentos', pedidosSchema);
