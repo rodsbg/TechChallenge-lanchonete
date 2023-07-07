@@ -13,6 +13,7 @@ const criarProduto = async (produtoData) => {
 
 const editarProduto = async (produtoId, produtoData) => {
   try {
+  //  console.log(produtoId, "   " ,produtoData, "Service")
     return await produtoRepository.editarProduto(produtoId, produtoData);
   } catch (error) {
     throw new Error('Erro ao editar o produto.');

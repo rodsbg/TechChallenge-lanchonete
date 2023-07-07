@@ -12,12 +12,11 @@ const criarProduto = async (produtoData) => {
   }
 };
 
-const editarProduto = async (produtoId, produtoData) => {
+const editarProduto = async (produtoData) => {
   try {
-    const produto = await Produto.findOneAndUpdate(produtoId, produtoData, 
-      {
-      new: true,
-    });
+  console.log(productData.codigo, "   " ,produtoData, "Repo");
+    const produto = await Produto.findOneAndUpdate(productData.codigo, produtoData);
+
     return produto;
   } catch (error) {
     throw new Error('Erro ao editar o produto.');

@@ -44,11 +44,10 @@ const router = express.Router();
 */ 
 /**
  * @openapi
- * /api/produtos/{codigo}:
+ * /api/produtos:
  *   put:
  *     summary: Alterar o produto pelo codigo
  *     description: Alterar o produto pelo codigo.
- *     parameters:
  *     requestBody:
  *      required: true
  *      content:
@@ -85,7 +84,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/produtos/{codigo}:
+ * /api/produtos:
  *   delete:
  *     summary: Deletar o produto pelo codigo
  *     description: Deletar o produto pelo codigo
@@ -120,8 +119,8 @@ const router = express.Router();
 
 
 router.post('/produtos', ProdutoController.criarProduto);
-router.put('/produtos/:id', ProdutoController.editarProduto);
-router.delete('/produtos/:id', ProdutoController.removerProduto);
+router.put('/produtos', ProdutoController.editarProduto);
+router.delete('/produtos', ProdutoController.removerProduto);
 router.get('/produtos/categoria/:categoria', ProdutoController.buscarProdutosPorCategoria);
 
 module.exports = router;
