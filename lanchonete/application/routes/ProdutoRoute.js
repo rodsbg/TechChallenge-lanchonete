@@ -63,6 +63,8 @@ const router = express.Router();
  *            required:
  *              - nome
  *              - categoria
+ *              - descricao
+ *              - preco
  *            properties:
  *              nome:
  *                type: string
@@ -70,6 +72,12 @@ const router = express.Router();
  *              categoria:
  *                type: array
  *                default: Categoria do Produto
+ *              descricao:
+ *                type: string
+ *                default: Descricao do Produto
+ *              preco:
+ *                type: array
+ *                default: Preco do Produto
  *     responses:
  *       200:
  *         description: Alterar o produto pelo codigo
@@ -87,7 +95,7 @@ const router = express.Router();
  *       name: codigo
  *       type: string
  *       required: true
- *       description: categoria 
+ *       description: codigo do produto
  *     responses:
  *       200:
  *         description: Deletar o produto pelo codigo
@@ -104,7 +112,7 @@ const router = express.Router();
  *       name: categoria
  *       type: string
  *       required: true
- *       description: lanche acompanhamento bebida sobremesa
+ *       description: Digitar - lanche ou acompanhamento ou bebida ou sobremesa
  *     responses:
  *       200:
  *         description: Lista produtos pela categoria
