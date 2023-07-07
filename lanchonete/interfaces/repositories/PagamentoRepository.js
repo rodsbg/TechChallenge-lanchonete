@@ -13,4 +13,4 @@ const criarPagamento = async (PedidoData) => {
 async function listarPagamentos() {
     return Pagamento.find();
   }
-module.exports = { listarPagamentos };
+module.exports = { listarPagamentos, criarPagamento };
