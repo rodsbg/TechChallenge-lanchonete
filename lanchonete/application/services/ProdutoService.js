@@ -40,6 +40,7 @@ const buscarProdutosPorCategoria = async (categoria) => {
 
 const buscarprodutoporcodigo = async (codigo) => {
   try {
+    console.log(codigo);
     return await produtoRepository.buscarprodutoporcodigo(codigo);
   } catch (error) {
     throw new Error('Erro ao buscar produtos por codigo.');

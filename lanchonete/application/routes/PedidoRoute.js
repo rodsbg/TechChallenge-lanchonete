@@ -26,7 +26,7 @@ const router = express.Router();
  *                type: string
  *                default: CPF do cliente
  *              lanche:
- *                type: array
+ *                type: string
  *                default: Incluir codigo do Lache
  *              acompanhamento:
  *                type: string

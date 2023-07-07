@@ -29,6 +29,10 @@ const pedidosSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  preco: {
+    type: String,
+    required: true,
+  }
   
 
 });

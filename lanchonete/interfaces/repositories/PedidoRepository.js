@@ -3,9 +3,10 @@ const Pagamento = require('../../domain/models/Pagamento');
 
 const criarPedido = async (PedidoData) => {
   try {
+
     const pedido = new Pedido(PedidoData);
     await pedido.save();
-
+    console.log(pedido);
     return pedido;
   } catch (error) {
     throw new Error('Erro ao criar pedido.');
