@@ -27,13 +27,13 @@ const router = express.Router();
  *                default: CPF do cliente
  *              lanche:
  *                type: array
- *                default: Incluir Lache
+ *                default: Incluir codigo do Lache
  *              acompanhamento:
  *                type: string
- *                default: Incluir Acompanhamento
+ *                default: Incluir codigo do Acompanhamento
  *              bebida:
  *                type: string
- *                default: Incluir Bebida
+ *                default: Incluir codigo da Bebida
  *              status:
  *                type: string
  *                default: Status do pedido - Enviado para pagamento
