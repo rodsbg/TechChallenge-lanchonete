@@ -12,7 +12,7 @@ const ProdutoRoute = require('./application/routes/ProdutoRoute');
 const clienteRoute = require('./application/routes/ClienteRoute');
 const campanhaRoute = require('./application/routes/CampanhaRoute');
 const pedidoRoute = require('./application/routes/PedidoRoute');
-const pagamentoRoute = require('./application/routes/FakecheckoutRoute');
+const pagamentoRoute = require('./appication/routes/FakecheckoutRoute');
 
 
 // Swagger configuration options
