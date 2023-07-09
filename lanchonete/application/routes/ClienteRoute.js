@@ -23,13 +23,13 @@ const router = express.Router();
  *            properties:
  *              nome:
  *                type: string
- *                default: Nome do Cliente
+ *                default: Joao da Silva
  *              cpf:
  *                type: number
- *                default: cpf do Cliente
+ *                default: 12345678901
  *              email:
  *                type: string
- *                default: email do Cliente
+ *                default: jsilva@gmail.com
  *     responses:
  *       201:
  *         description: Cliente Cadastrado
@@ -58,6 +58,7 @@ const router = express.Router();
  *       type: integer
  *       required: true
  *       description: CPF
+ *       defaut: 12345678901
  *     responses:
  *       200:
  *         description: Cliente ativo

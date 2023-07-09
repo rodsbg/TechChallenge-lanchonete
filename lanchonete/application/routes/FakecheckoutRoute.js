@@ -10,7 +10,7 @@ const router = express.Router();
  *     description: Consulta Pagamento (FakeCheckout)
  *     responses:
  *       200:
- *         description: Listagem ok
+ *         description: Listagem dos pagamentos
 */ 
 
 router.get('/consultapagamentos', pagamentoController.listarPagamentos);

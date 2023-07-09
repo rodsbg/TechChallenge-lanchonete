@@ -23,10 +23,10 @@ const router = express.Router();
  *            properties:
  *              cpf:
  *                type: string
- *                default: CPF do cliente
+ *                default: 12345678901
  *              campanha:
  *                type: string
- *                default: Campanha para o cliente
+ *                default: 15% de desconto nas proximas compras
  * 
  *     responses:
  *       200:

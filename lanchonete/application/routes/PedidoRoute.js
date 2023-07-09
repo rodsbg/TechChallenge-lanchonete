@@ -24,22 +24,22 @@ const router = express.Router();
  *            properties:
  *              cpf:
  *                type: string
- *                default: CPF do cliente
+ *                default: 12345678901
  *              lanche:
  *                type: string
- *                default: Incluir codigo do Lache
+ *                default: 1
  *              acompanhamento:
  *                type: string
- *                default: Incluir codigo do Acompanhamento
+ *                default: 2
  *              bebida:
  *                type: string
- *                default: Incluir codigo da Bebida
+ *                default: 3
  *              status:
  *                type: string
- *                default: Status do pedido - Enviado para pagamento
+ *                default: Enviado
  *              ondecomer:
  *                type: string
- *                default: Viagem ou comer na lanchonete
+ *                default: Viagem
  *     responses:
  *       200:
  *         description: Produto Cadastrado
@@ -57,6 +57,7 @@ const router = express.Router();
  *       type: string
  *       required: true
  *       description: cpf do cliente para consultar pedido
+ *       default: 12345678901
  *     responses:
  *       200:
  *         description: Consulta status do pedido por cpf

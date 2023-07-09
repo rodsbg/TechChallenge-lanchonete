@@ -63,19 +63,19 @@ const router = express.Router();
  *            properties:
  *              codigo:
  *                type: number
- *                default: codigo do Produto
+ *                default: 1
  *              nome:
  *                type: string
- *                default: Nome do Produto
+ *                default: Hamburguer
  *              categoria:
  *                type: number
- *                default: Categoria do Produto
+ *                default: lanche
  *              descricao:
  *                type: string
- *                default: Descricao do Produto
+ *                default: Pao, hamburguer e queijo
  *              preco:
  *                type: number
- *                default: Preco do Produto
+ *                default: 15
  *     responses:
  *       200:
  *         description: Alterar o produto pelo codigo
@@ -94,6 +94,7 @@ const router = express.Router();
  *       type: string
  *       required: true
  *       description: codigo do produto
+ *       default: 1
  *     responses:
  *       200:
  *         description: Deletar o produto pelo codigo
@@ -111,6 +112,7 @@ const router = express.Router();
  *       type: string
  *       required: true
  *       description: Digitar - lanche ou acompanhamento ou bebida ou sobremesa
+ *       default: lanche
  *     responses:
  *       200:
  *         description: Lista produtos pela categoria
