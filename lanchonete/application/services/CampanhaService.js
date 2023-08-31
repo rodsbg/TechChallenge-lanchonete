@@ -1,4 +1,4 @@
-const clienteRepository = require('../../interfaces/repositories/ClienteRepository');
+const clienteRepository = require('..//ClienteRepository');
 const campanhaRepository = require('../../interfaces/repositories/CampanhaRepository');
 
 async function cadastrarCampanha(campanhaData) {
