@@ -9,7 +9,7 @@ const criarPedido = async (PedidoData) => {
     console.log(pedido);
     return pedido;
   } catch (error) {
-    throw new Error('Erro ao criar pedido.');
+    throw new Error('Erro ao criar pedido.' + error.Error);
   }
 };
 

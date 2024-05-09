@@ -29,12 +29,15 @@ async function cadastrarPedido(pedidoData) {
   pedidoData.preco = precototal;
   //console.log(pedidoData);
 
-  const pedido = await pedidoRepository.criarPedido(pedidoData);
+    const pedido = await pedidoRepository.criarPedido(pedidoData);
+
+
+    return (pedido);
   // realiza o pagamento (fake checkout) e muda o status do pedido
-  const pagamento = await pagamentoRepository.criarPagamento(pedidoData);
-  // muda status do pedido para Enviado para a cozinha
-  const mudarstatus = await pedidoRepository.editarStatusPedido();
-  return (pedido, pagamento, mudarstatus) ;
+  //const pagamento = await pagamentoRepository.criarPagamento(pedidoData);
+  //// muda status do pedido para Enviado para a cozinha
+  //const mudarstatus = await pedidoRepository.editarStatusPedido();
+  //return (pedido, pagamento, mudarstatus) ;
 }
 async function listarPedidos() {
   

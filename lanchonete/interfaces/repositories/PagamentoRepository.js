@@ -6,7 +6,7 @@ const criarPagamento = async (PedidoData) => {
     await pagamento.save();
     return pagamento;
   } catch (error) {
-    throw new Error('Erro ao criar pedido.');
+    throw new Error('Erro ao criar pagamento.' + error);
   }
 };
 
