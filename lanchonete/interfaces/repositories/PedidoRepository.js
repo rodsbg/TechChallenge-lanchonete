@@ -19,6 +19,7 @@ async function listarPedidos() {
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
     try {
+        console.log("Pedido repository: buscarpedidosporcpfPedidos");
         const pedidos = await Pedido.find({ cpf });
         return pedidos;
     } catch (error) {

@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\lanchonete",
-    "\\lanchonete\\domain",
-    "\\lanchonete\\domain\\models"
+    "\\lanchonete\\application\\routes",
+    "\\lanchonete\\application\\services",
+    "\\lanchonete\\interfaces\\controllers",
+    "\\lanchonete\\interfaces\\repositories"
   ],
+  "SelectedNode": "\\lanchonete\\README.md",
   "PreviewInSolutionExplorer": false
 }

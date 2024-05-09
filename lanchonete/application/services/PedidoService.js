@@ -46,7 +46,8 @@ async function listarPedidos() {
 
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
-  try {
+    try {
+        console.log("Pedido service: buscarpedidosporcpfPedidos");
       return await pedidoRepository.buscarpedidosporcpfPedidos(cpf);
   } catch (error) {
     throw new Error('Nenhum pedido cadastrado para o cliente');

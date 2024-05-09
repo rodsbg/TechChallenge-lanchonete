@@ -29,9 +29,10 @@ const listarPedidos = async(req,res) => {
   }
 }
 const buscarpedidosporcpfPedidos = async (req, res) => {
-  try {
+    try {
+        console.log("Pedido Controller: buscarpedidosporcpfPedidos");
     const { cpf } = req.params;
-    const pedidos = await produtoService.buscarpedidosporcpfPedidos(categoria);
+        const pedidos = await pedidoService.buscarpedidosporcpfPedidos(cpf);
       res.status(200).json(pedidos);
   } catch (error) {
     res.status(500).json({ error: error.message });
