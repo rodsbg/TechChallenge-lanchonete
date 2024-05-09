@@ -3,7 +3,6 @@
 O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
 
 Rm349615 - Alexandre Montesino da Costa Campos
-Rm349108 - Renato Gagliard Sabo
 Rm349612 - Ricardo Amaral Jara
 Rm350424 - Rodrigo Barboza Gonçalves
 
