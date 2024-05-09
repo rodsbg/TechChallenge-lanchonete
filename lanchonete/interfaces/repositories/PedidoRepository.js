@@ -18,13 +18,14 @@ async function listarPedidos() {
   }
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
-  try {
-    const pedidos = await Pedido.find({ cpf });
-    return pedidos;
-  } catch (error) {
-    throw new Error('Erro buscar pedido pelo cpf.');
-  }
+    try {
+        const pedidos = await Pedido.find({ cpf });
+        return pedidos;
+    } catch (error) {
+        throw new Error('Erro buscar pedido pelo cpf.');
+    }
 };
+
 
 const editarStatusPedido = async (cpf, PedidoData) => {
   try {

@@ -47,7 +47,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/pedidos/{cpf}:
+ * /api/pedido/{cpf}:
  *   get:
  *     summary: Acompanhamento do pedido por cpf
  *     description: Acompanhamento status do pedido por cpf

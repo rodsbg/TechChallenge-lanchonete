@@ -47,7 +47,7 @@ async function listarPedidos() {
 
 const buscarpedidosporcpfPedidos = async (cpf) => {
   try {
-    return await produtoRepository.buscarpedidosporcpfPedidos(cpf);
+      return await pedidoRepository.buscarpedidosporcpfPedidos(cpf);
   } catch (error) {
     throw new Error('Nenhum pedido cadastrado para o cliente');
   }
