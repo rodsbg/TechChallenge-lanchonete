@@ -7,22 +7,26 @@ const pedidosSchema = new mongoose.Schema({
   },
   lanche: {
     type: String,
-    required: true,
+    required: false,
     
   },
   acompanhamento: {
     type: String,
-    required: true,
+    required: false,
    
   },
   bebida: {
     type: String,
-    required: true,
+    required: false,
   
-  },
+    },
+    sobremesa: {
+        type: String,
+        required: false,
+    },
   status: {
     type: String,
-    enum: ['Pagamento','Recebido', 'Em preparacao', 'Pronto', 'Finalizado'],
+    enum: ['Recebido', 'Em preparacao', 'Pronto', 'Finalizado'],
     required: true,
   },
   ondecomer: {
