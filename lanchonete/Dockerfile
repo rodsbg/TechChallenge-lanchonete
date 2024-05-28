@@ -17,4 +17,4 @@ ADD . .
 EXPOSE 3000
 
 # Run the application
-CMD ["node", "server.js"]
+CMD ["node", "app.js"]
