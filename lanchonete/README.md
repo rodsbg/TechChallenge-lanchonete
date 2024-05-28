@@ -1,4 +1,4 @@
-# Tech Challenge - Grupo 11
+# Tech Challenge - Grupo 62
 
 O projecto do Tech Challenge foi desenvolvido baseado no aprendizado das aulas.
 
