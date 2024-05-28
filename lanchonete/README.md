@@ -47,7 +47,7 @@ Executar como administrador do powershell
    git clone https://github.com/rodsbg/TechChallenge-lanchonete.git
 2. Navegar até a pasta onde o projeto foi salvo
 3. Entrar na pasta lanchonete
-4. executar: npm install express mongoose mongo body-parser swagger-ui-express swagger-jsdoc mercadopago
+4. executar: npm install express mongoose mongo body-parser swagger-ui-express swagger-jsdoc mercadopago dotenv
 5. docker-compose up -d --build
 6. acessar: http://localhost:3000/api-docs
 7. Abrirá o swagger exibindo as APIs e nele é possível executar os testes para validação, as instruções aparecem no Swagger
