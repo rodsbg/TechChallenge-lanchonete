@@ -1,21 +1,21 @@
 const mercadopago = require('mercadopago');
 const Pedido = require('../../domain/models/Pedido');
 const Pagamento = require('../../domain/models/Pagamento');
+const Produto = require('../../domain/models/Produto'); // Supondo que o modelo esteja nesse caminho
 
 // Configurar credenciais do Mercado Pago
 mercadopago.configure({
   access_token: process.env.ACCESS_TOKEN
 });
 
-// Função para criar pagamentoi
-
+// Função para criar pagamento
 const criarPagamento = async (PedidoData) => {
   try {
     const pagamento = new Pedido(PedidoData);
     await pagamento.save();
     return pagamento;
   } catch (error) {
-    throw new Error('Erro ao criar pagamento.' + error);
+    throw new Error('Erro ao criar pagamento: ' + error);
   }
 };
 
@@ -43,6 +43,9 @@ const criarPagamento_mercadopago = async (dadosPedido) => {
     });
 
     await pagamento.save();
+    
+    // Supondo que 'cpf' seja um campo dentro de dadosPedido
+    const cpf = dadosPedido.cpf;
     // Muda Status do pedido para Em Preparação
     const pedido = await Produto.findOneAndUpdate({ cpf }, { status: 'Em Preparação' }, { new: true });
 
@@ -52,8 +55,7 @@ const criarPagamento_mercadopago = async (dadosPedido) => {
   }
 };
 
-
-sync function gerarQRCode(idPreferencia) {
+async function gerarQRCode(idPreferencia) {
   try {
     // Obter a preferência de pagamento
     const preference = await mercadopago.preferences.findById(idPreferencia);
@@ -68,11 +70,9 @@ sync function gerarQRCode(idPreferencia) {
   }
 }
 
-
 // Função para listar pagamentos
 async function listarPagamentos() {
   return Pagamento.find();
 }
 
-module.exports = { listarPagamentos, criarPagamento };
-
+module.exports = { listarPagamentos, criarPagamento, criarPagamento_mercadopago, gerarQRCode };
